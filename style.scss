@@ -1,0 +1,289 @@
+
+body {
+    display: flex;
+}
+
+.game-container {
+    width: 500px;
+    height: 730px;
+    position: absolute;
+    left: 80px;
+}
+
+.border-left {
+    width: 80px;
+    height: 790px;
+    position:  absolute;
+    background-color: white;
+    z-index: +2;
+}
+
+.border-right {
+    width: 80px;
+    height: 790px;
+    position: absolute;
+    background-color: white;
+    z-index: +2;
+    left: 580px;
+}
+
+.border-top {
+    width: 660px;
+    height: 50px;
+    position:  absolute;
+    background-color: white;
+    z-index: +2;
+    top: -50px;
+}
+
+.sky {
+    background-image: url('./assets/img/flappy_bird_bg.png');
+    width: 500px;
+    height: 580px;
+    position: absolute;
+}
+
+
+.ground {
+    background-image: url('./assets/img/flappy_bird_fg.png');
+    width: 500px;
+    height: 150px;
+    position: absolute;
+    bottom: 0;
+    top: 580px;
+    z-index: +1;
+}
+
+.bird {
+    background-image: url('./assets/img/flappy_bird_bird.png');
+    position: absolute;
+    width: 60px;
+    height: 45px;
+    left: 220px;
+    bottom: 100px;
+    background-repeat: no-repeat;
+}
+
+.obstacle {
+    background-image: url('./assets/img/flappy_bird_pipeBottom.png');
+    width: 60px;
+    height: 300px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.topObstacle {
+    background-image: url('./assets/img/flappy_bird_pipeBottom.png');
+    transform: rotate(180deg);
+    width: 60px;
+    height: 300px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.textOver {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+  }
+
+  .textWin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+  }
+
+@keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+  
+  @-webkit-keyframes slideright {
+    from {
+        background-position: 10000%;
+    }
+    to {
+        background-position: 0%;
+    }
+  }
+
+  .ground-container {
+      height: 150px;
+      width: 580px;
+      left: 80px;
+      position:  absolute;
+  }
+  
+  .ground-moving {
+    position: absolute;
+    top: 510px;
+    height: 200px;
+    background-image: url('./assets/img/flappy_bird_bg.png');
+    background-repeat: repeat-x;
+    animation: slideright 100s infinite linear;
+    -webkit-animation: slideright 100s infinite linear;
+    width: 100%;
+    z-index: +1;
+  }
+
+
+  .play-pause {
+    position: absolute;
+    margin-top: 270px;
+    margin-left: 200px;
+    z-index: +3;
+  }
+
+  .play_button {
+    position: absolute;
+    display: inline-flex;
+    padding-left: 15px;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: transparent;
+    border: 2px solid black;
+    z-index: +1;
+    cursor: pointer;
+    &:hover {
+        background: lightblue;
+    }
+}
+
+.pause_button {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background: transparent;
+    border: 2px solid black;
+    z-index: +1;
+    cursor: pointer;
+    &:hover {
+        background: lightblue;
+    }
+}
+
+.icon_play {
+    display: inline-block;
+    background-image: url(./assets/img/icon_play.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon_pause {
+    display: inline-block;
+    background-image: url(./assets/img/icon_pause.svg);
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+  }
+
+  .results {
+    width: 230px;
+    height: 90px;
+    position: absolute;
+    border-radius: 20px;
+    top: 10px;
+    left: 20px;
+    z-index: +1;
+    background-color: white;
+    font-size: 15px;
+
+  }
+
+  .rules {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: underline;
+    color: red;
+  }
+
+  
+  .scoreName {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+    padding-left: 12px;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+  .bestScore {
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5px;
+    padding-top: 10px;
+    padding-left: 12px;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+  }
+
+
+  .footerLinks {
+    position: absolute;
+    bottom: -30px;
+    left: 8px;
+    z-index: 2;
+    height: 50px;
+    width: 100%;
+    background: linear-gradient(90deg, rgb(87, 172, 230), rgb(185, 232, 240));
+    a {
+        position: absolute;
+        bottom: 0;
+    }
+  }
+
+  .year {
+    font-weight: 700;
+    position: absolute;
+    bottom: -40px;
+    left: 35px;
+    z-index: 3;
+  }
+
+  .github {
+    position: absolute;
+    bottom: -30px;
+    left: 205px;
+    z-index: 3;
+  }
+
+  .course {
+    position: absolute;
+    bottom: -35px;
+    left: 400px;
+    z-index: 3;
+  }
+  
