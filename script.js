@@ -52,6 +52,15 @@ function playGame() {
         }
     }
 
+    //
+    function mobileJump() {
+        volume.addEventListener("touchstart", control);
+        volume.addEventListener("touchmove", control);
+        volume.addEventListener("touchend", control);
+       }
+      
+      document.addEventListener("DOMContentLoaded", mobileJump);
+
     //Функция прыжка по нажатию кнопки (слушаем момент отпускания кнопки)
     function jump() {
         if (birdBottom < 500) birdBottom += 50 // условие чтобы птица не прыгала выше "потолка"
